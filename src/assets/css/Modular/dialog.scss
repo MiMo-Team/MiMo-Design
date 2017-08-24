@@ -1,0 +1,14 @@
+$dialog-topgap: 50px;
+$dialog-botgap: 50px;
+
+@mixin dialog-height($gap1,$gap2) {
+  height: calc(100% - (#{$gap1} + #{$gap2}));
+}
+.el-dialog {
+  @include dialog-height($dialog-topgap, $dialog-botgap);
+  margin: $dialog-topgap 0 $dialog-botgap;
+  overflow-y: auto;
+  .el-form--label-left .el-form-item__label {
+    text-align: right;
+  }
+}

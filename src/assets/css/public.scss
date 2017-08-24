@@ -1,0 +1,181 @@
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.txtC {
+  text-align: center !important;
+}
+
+.txtL {
+  text-align: left !important;
+}
+
+.txtR {
+  text-align: right !important;
+}
+
+.clr_mt {
+  margin-top: 0 !important;
+}
+
+.clr_mb {
+  margin-bottom: 0 !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* ========= 字体 size ========= */
+
+.fs2e {
+  font-size: 2em;
+}
+
+/* ========= 皮肤skin 方案 ========= */
+
+//Scenario 1: skin-blue
+$skin98: rgba(50, 65, 87, 0.98);
+$skin88: rgba(50, 65, 87, .88);
+$skin78: rgba(50, 65, 87, .78);
+$skin68: rgba(50, 65, 87, .68);
+$skin_h98: rgba(238, 241, 246, .98);
+$skin_h68: rgba(238, 241, 246, .68);
+.skin98 {
+  background-color: $skin98;
+}
+
+.primary{
+  color: rgba(32, 160, 255, 1);
+}
+/* ========= 工作台 窗口win 主标题颜色 ========= */
+
+$clr_primary: rgba(32, 160, 255, 0.98);
+
+/* ========= 黑 白 颜色 ========= */
+$clr_w98: rgba(255, 255, 255, .98);
+
+/* -------------------------  工作台 整体界面参数  ------------------------- */
+@mixin tit-base-style( $base-size,$base-gap,$color) {
+  text-align: center;
+  font-size: $base-size;
+  font-style: normal;
+  color: $color;
+  padding-top: $base-gap;
+  padding-bottom: $base-gap;
+}
+
+@mixin submit-base-style( $base-size,$base-gap,$color) {
+  width: $base-size;
+  height: 40px;
+  margin: $base-gap auto;
+  border: 0;
+  font-size: 18px;
+  color: $color;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* title */
+.large-tit {
+  @include tit-base-style(48px, 20px, rgba(255, 255, 255, .98));
+}
+
+.middle-tit {
+  @include tit-base-style(30px, 15px, rgba(255, 255, 255, .98));
+}
+
+.small-tit {
+  @include tit-base-style(18px, 5px, rgba(255, 255, 255, .98));
+}
+
+/* submit */
+.large-submit {
+  @include submit-base-style(300px, 10px, rgba(255, 255, 255, .98));
+}
+
+.middle-submit {
+  @include submit-base-style(120px, 10px, rgba(255, 255, 255, .98));
+}
+
+.small-submit {
+  @include submit-base-style(60px, 10px, rgba(255, 255, 255, .98));
+}
+
+/*icon 图标*/
+.svg-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+/* icon - button */
+.el-button.btn-icon {
+  padding: 5px 7.5px;
+}
+
+/*滚动条垂直方向的宽度*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* 垂直滚动条的滑动块 */
+::-webkit-scrollbar-thumb:vertical {
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: rgba(129, 129, 129, 0.5);
+}
+
+/* 水平滚动条的滑动块 */
+::-webkit-scrollbar-thumb:horizontal {
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: rgba(129, 129, 129, 0.5);
+}
+
+::-webkit-scrollbar-thumb:vertical:hover, ::-webkit-scrollbar-thumb:horizontal:hover {
+  background-color: rgba(255, 255, 255, 0.68);
+}
+
+/* lazyload 懒加载模块 */
+.lazyload[lazy=loading] {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  background-position: center top;
+  background-size: cover;
+  //background-image: url("../../assets/img/lazyload/loading/lazyloading4.png");
+}
+
+.lazyload[lazy=loaded] {
+  -webkit-animation: fade 1.2s;
+  -moz-animation: fade 1.2s;
+  -o-animation: fade 1.2s;
+  animation: fade 1.2s;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

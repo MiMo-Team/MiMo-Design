@@ -1,0 +1,22 @@
+{
+  "name": "mimo-v1.0.0",
+  "description": "A Vue.js project",
+  "main": "",
+  "authors": [
+    "Lensgcx <Lensgcx@163.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "mockjs": "^1.0.0",
+    "axios": "^0.16.2",
+    "jquery": "^3.2.1"
+  }
+}

@@ -1,0 +1,223 @@
+@import "../public.scss";
+
+//左侧导航栏宽度
+$navL: 200px;
+//顶部导航高度
+$navH: 50px;
+//顶部导航下拉菜单，各个部分高度
+$navH_p: 36px;
+//顶部导航左 padding
+$navH_pl: 2px;
+//顶部导航右 padding
+$navH_pr: 20px;
+//logo，height值
+$logo_H: 90px;
+//logo，padding - top/bottom值
+$logo_pt: 25px;
+//logo，padding - left/right值
+$logo_pl: 45px;
+
+//---- 右侧窗口悬浮显示 上下左右 空隙值 ----
+$win_gapT: 0px;
+$win_gapB: 0px;
+$win_gapR: 0px;
+$win_gapL: 0px;
+//win 内边距
+$win_pt: 30px;
+$win_pb: 30px;
+$win_pl: 40px;
+$win_pr: 30px;
+
+
+$sidebar-back: rgba(50, 65, 87, 1);
+
+@mixin transition( $property,$duration,$timing-function) {
+  -moz-transition: $property $duration $timing-function;
+  -webkit-transition: $property $duration $timing-function;
+  -o-transition: $property $duration $timing-function;
+  transition: $property $duration $timing-function;
+}
+
+body {
+  min-width: 700px;
+  min-height: 100vh;
+  #app {
+    min-height: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow:hidden;
+  }
+}
+
+/*布局*/
+#layout.app-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: inherit;
+  overflow: hidden;
+  background: url("../../../assets/img/bg/index.jpg") no-repeat;
+  background-size: 100% auto;
+  background-position: top;
+  /* ------------ 左侧导航栏模块 ------------*/
+  .sidebar-wrapper {
+    position: fixed;
+    z-index: 200;
+    width: $navL;
+    height: 100%;
+    background-color: $sidebar-back;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    @include transition(all, .48s, linear);
+    & ::-webkit-scrollbar {
+      width: 0
+    }
+    /* logo */
+    .logo {
+      width: $navL - $logo_pl*2;
+      height: $logo_H - $logo_pt*2;
+      padding: $logo_pt $logo_pl;
+      img {
+        width: 100%;
+        height: 100%;
+        @include transition(all, .8s, linear);
+        &:hover {
+          transform: scale(1.2)
+        }
+      }
+    }
+    /*左侧菜单栏*/
+    .sidebar-container {
+      position: absolute;
+      width: 100%;
+      height: calc(100% - #{$navH});
+      top: 0;
+      bottom: 0;
+      left: 0;
+      overflow-y: scroll;
+      @include transition(all, .48s, linear);
+      /*左侧菜单栏下拉菜单*/
+      .el-menu-vertical-demo {
+        margin-top: $logo_H;
+        width: $navL;
+      }
+    }
+  }
+  /* ------------ 内容 模块 ------------ */
+  .main-container {
+    min-height: inherit;
+    margin-left: $navL;
+    z-index: 1;
+    overflow: hidden;
+    @include transition(all, .32s, linear);
+    /* ------------  顶部模块 ------------  */
+    .header {
+      position: relative;
+      width: 100%;
+      height: $navH;
+      line-height: $navH;
+      background: $skin_h98;
+      /*顶部 内容 部分*/
+      .headNav {
+        height: 100%;
+        line-height: $navH;
+        padding-left: $navH_pl;
+        padding-right: $navH_pr;
+        //侧边栏切换按钮
+        .hamburger-container {
+          height: $navH;
+          line-height: $navH + 8px;
+          padding: 0 10px;
+        }
+        //头像内容下拉模块
+        .avatar-container {
+          height: 100%;
+          line-height: $navH;
+          padding-right: $navH_pr;
+          cursor: pointer;
+          .avatar-wrapper {
+            width: 0.8*$navH;
+            height: 0.8*$navH;
+            padding: 0.1*$navH 0;
+            line-height: 0.8*$navH;
+            img {
+              height: 100%;
+              border-radius: 0.2*$navH;
+            }
+            i {
+              position: absolute;
+              right: 0;
+              top: $navH*0.5;
+              font-size: 12px;
+            }
+          }
+        }
+        // 欢迎 名字
+        .hello {
+          height: 100%;
+          line-height: $navH;
+          font-size: 16px;
+          font-weight: bold;
+          padding-right: 10px;
+          span {
+            padding-left: 5px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    /* ------------  右侧内容模块整体（固定不变，占位） ------------ */
+    .app-main {
+      position: relative;
+      display: block;
+      width: calc(100% - (#{$win_gapR} + #{$win_gapL}));
+      //min-height: calc(100% - (#{$navH} + #{$win_gapT} + #{$win_gapB}));
+      min-height: calc(100vh - (#{$navH} + #{$win_gapT} + #{$win_gapB}));
+      padding: $win_gapT $win_gapR $win_gapB $win_gapL;
+      overflow: hidden;
+      //右侧  转换 内容窗口
+      .win {
+        //position: absolute;
+        width: calc(100% - (#{$win_pl} + #{$win_pr} + #{$win_gapR} + #{$win_gapL}));
+        min-height: calc(100vh - (#{$win_pt} + #{$win_pb} + #{$win_gapT} + #{$win_gapB} + #{$navH}));
+        padding: $win_pt $win_pr $win_pb $win_pl;
+        overflow: hidden;
+        .wm {
+          overflow: hidden;
+          min-height: inherit;
+        }
+      }
+      //dashboard 主页 布局
+      #dashboard.win{
+        width: 100% ;
+        min-height: calc(100vh - #{$navH});
+        padding: 0;
+        .wm {
+          min-height: calc(100vh - #{$navH});
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+
+/*所有导航栏底色*/
+#layout .el-menu {background-color:transparent;}
+/*------------------  下拉菜单的导航模块字体颜色变化  ------------------*/
+#layout .sidebar-wrapper .el-menu-item,.sidebar-wrapper .el-submenu__title,#layout .sidebar-wrapper .el-menu--horizontal .el-submenu .el-submenu__icon-arrow {color:$clr_w98 !important;}
+/*------------------  鼠标移入效果  ------------------*/
+#layout .el-menu--horizontal.el-menu--dark .el-submenu .el-menu-item:hover,#layout .el-menu--horizontal.el-menu--dark .el-submenu .el-submenu-title:hover,#layout .el-menu-item:hover:hover {background-color:$skin78;}
+#layout .el-submenu .el-menu-item:hover,#layout .el-submenu__title:hover {background-color:$skin78;}
+#layout .el-menu--horizontal .el-submenu .el-submenu__title:hover {background-color:$skin78;}
+//下拉子菜单鼠标移入效果
+#layout .header .headNav .el-submenu .el-menu li.el-menu-item:hover {background-color:$skin78;}
+
+
+
+
+
+
+
+
+

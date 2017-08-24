@@ -1,0 +1,151 @@
+//主题点缀skin
+$skin-color: #20a0ff;
+//字体基本色
+$font-color: rgba(255, 255, 255, .98);
+//前台 内容 背景色
+$content-back: rgba(0, 0, 0, 0.5);
+//服务协定 内容 背景色
+$dialog-back: rgba(0, 0, 0, 0.92);
+
+//前台基本宽度
+$front-base-width: 420px;
+//前台LOGO基本高度
+$front-logo-height: 240px;
+//前台 内部内容左右padding
+$front-content-padLR: 60px;
+//前台 内部内容上下padding
+$front-content-padTB: 30px;
+//前台 基本 间隙值
+$front-base-gap: 10px;
+
+.front {
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  //height: 100%;
+  //height: 100vh;
+  overflow: hidden;
+  background: url("../../../assets/img/bg/mimo-bg4.jpg") no-repeat top;
+  background-size: cover;
+  .el-checkbox, .el-checkbox__label {
+    color: $font-color;
+  }
+  /*login forget register resetpw successpw  ----- logo*/
+  .big-Logo {
+    width: $front-base-width;
+    height: $front-logo-height;
+    margin: $front-logo-height/6 auto 0;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  /*login forget register resetpw successpw  ----- mainbg*/
+  .front-content {
+    position: relative;
+    width: $front-base-width - $front-content-padLR*2;
+    min-height: $front-base-width;
+    padding: $front-content-padTB $front-content-padLR;
+    margin: 0 auto;
+    background-color: $content-back;
+    //操作文字
+    .handle {
+      a {
+        padding-left: 0;
+        color: $font-color;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+          color: $skin-color;
+          text-decoration: underline;
+        }
+      }
+    }
+    //返回按钮
+    .handle-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      cursor: pointer;
+      svg {
+        padding: 20px;
+        font-size: 28px;
+        color: $font-color;
+        &:hover {
+          color: $skin-color;
+        }
+      }
+    }
+    //注册选择模式
+    .mode-main {
+      .fill {
+        display: block;
+        width: 100%;
+        padding: 0;
+        svg.svg-icon{
+          font-size: 2em;
+        }
+      }
+      a {
+        width: calc(100% - 4px);
+        height: 76px;
+        line-height: 84px;
+        border-radius: calc(100% - 4px);
+        border: 2px solid $skin-color;
+        color: $font-color;
+        text-align: center;
+        cursor: pointer;
+        margin-top: 40px;
+        margin-bottom: 10px;
+        &:hover {
+          background: $skin-color;
+        }
+      }
+    }
+    //注册内容
+    .contView {
+      //表单内容
+      .fcont {
+        width: 100%;
+        height: auto;
+        padding-top: $front-base-gap;
+        //验证码
+        .vcode {
+          display: inline-block;
+          &.vcode-ipt {
+            width: 2/3*100%-1%;
+          }
+          &.vcode-btn {
+            width: 1/3*100%-1%;
+          }
+        }
+      }
+    }
+    //服务协定
+    #service-agreement.el-dialog__wrapper {
+      .el-dialog {
+        .el-dialog__title {
+          color: $font-color;
+        }
+        background: $dialog-back;
+        h3 {
+          color: $font-color;
+          padding: $front-base-gap 0;
+        }
+        p {
+          color: $font-color;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+

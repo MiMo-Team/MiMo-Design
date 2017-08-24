@@ -1,0 +1,147 @@
+/* =========  style for table ( mainly for form background, border, font color changes ) ========= */
+.app-main .win {
+  .el-table {
+    .el-table__fixed-right{
+      overflow-y: hidden;
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+      &::-webkit-scrollbar-thumb:vertical {
+        background-color: transparent;
+      }
+    }
+    //表格thead内容居中
+    th > .cell {
+      //font-size: 16px;
+      text-align: center;
+    }
+    //表格tbody内容居中
+    .cell {
+      text-align: center;
+    }
+    /* ===== 展开行模块 ==== */
+    form.demo-table-expand {
+      font-size: 0;
+      /*左边头像部分*/
+      .table-expand-portrait {
+        width: 10%;
+        padding: 10px 20px 0 20px;
+      }
+      /*右边展开内容部分*/
+      .table-expand-content {
+        width: 65%;
+      }
+      /*展开行内容各部分*/
+      .el-form-item {
+        margin-right: 0;
+        margin-bottom: 10px;
+        /*展开行内容各部分 - lable */
+        label.el-form-item__label {
+          width: 90px;
+        }
+      }
+    }
+    /* === span ==== */
+    span{
+      &.msg-tit {
+        cursor: pointer;
+        //display: -webkit-box;
+        //-webkit-box-orient: vertical;
+        //-webkit-line-clamp: 3;
+        //overflow: hidden;
+        &:hover {
+          font-weight: 500;
+          color: rgba(32, 160, 255, 0.98);
+        }
+      }
+      &.msg-content{
+        max-height: 92px;
+        font-size: 12px;
+        font-weight: lighter;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+/* =========== 左边头像部分 和 右边展开内容部分 自适应网页布局 =========== */
+@media screen and (min-width: 1338px) {
+  .app-main .win {
+    .el-table {
+      form.demo-table-expand {
+        .table-expand-portrait {
+          width: 10%;
+        }
+        .table-expand-content {
+          width: 70%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1337px) {
+  .app-main .win {
+    .el-table {
+      form.demo-table-expand {
+        .table-expand-portrait {
+          width: 15%;
+        }
+        .table-expand-content {
+          width: 65%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1199px) {
+  .app-main .win {
+    .el-table {
+      form.demo-table-expand {
+        .table-expand-portrait {
+          width: 16%;
+        }
+        .table-expand-content {
+          width: 64%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1099px) {
+  .app-main .win {
+    .el-table {
+      form.demo-table-expand {
+        .table-expand-portrait {
+          width: 17%;
+        }
+        .table-expand-content {
+          width: 63%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .app-main .win {
+    .el-table {
+      form.demo-table-expand {
+        .table-expand-portrait {
+          width: 18%;
+        }
+        .table-expand-content {
+          width: 62%;
+        }
+      }
+    }
+  }
+}
+
+

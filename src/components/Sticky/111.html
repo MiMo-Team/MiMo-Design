@@ -1,0 +1,111 @@
+<template>
+    <div :style="{width:width,height:height+'px',zIndex:zIndex,'margin-left':marginLeft+'px'}">
+        <div :class="[className,'sticky-header']"
+             :style="{top:stickyTop+'px',zIndex:zIndex,position:position,width:'inherit',height:height+'px',padding:padding,background:background}">
+            <slot :style="{margin:margin}">
+                <div>sticky</div>
+            </slot>
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: 'Sticky',
+        props: {
+            stickyTop: {
+                type: Number,
+                default: 50
+            },
+            zIndex: {
+                type: Number,
+                default: 9999
+            },
+            className: {
+                type: String
+            }
+        },
+        data() {
+            return {
+                active: false,
+                position: '',
+                width: undefined,
+                height: undefined,
+                currentTop: '',
+                padding: undefined,
+                margin: 0,
+                marginLeft: 0,
+                background: undefined,
+                gap: 30,
+                child: null,
+                stickyHeight: 0
+
+            };
+        },
+        methods: {
+            sticky() {
+                if (this.active) {
+                    return
+                }
+                this.position = 'fixed';
+                this.active = true;
+                this.padding = '0 10px';
+                this.margin = '-5px 0 0 0';
+                this.marginLeft = -30;
+                this.width = (this.width + this.gap * 2 - 10) + 'px';
+                this.background = 'rgba(238, 241, 246, 0.98)';
+            },
+            reset() {
+                if (!this.active) {
+                    return
+                }
+                this.position = '';
+                this.background = undefined;
+                this.padding = 0;
+                this.margin = 0;
+                this.marginLeft = 0;
+                this.width = 'auto';
+                this.active = false
+            },
+            handleScroll() {
+                this.width = this.$el.getBoundingClientRect().width;
+                const offsetTop = this.$el.getBoundingClientRect().top;
+                if (offsetTop <= this.stickyTop) {
+                    console.log(111111111111111);
+                    this.sticky();
+                    return
+                }
+                console.log(22222222222);
+                this.reset()
+            }
+        },
+        mounted() {
+            this.height = this.$el.getBoundingClientRect().height;
+            document.querySelector('.app-main').addEventListener('onresize', this.handleScroll);
+            document.querySelector('.app-main').addEventListener('scroll', this.handleScroll);
+        },
+        destroyed() {
+            document.querySelector('.app-main').addEventListener('onresize', this.handleScroll);
+            document.querySelector('.app-main').removeEventListener('scroll', this.handleScroll);
+        }
+    };
+</script>
+<style rel="stylesheet/scss" lang="scss">
+    .sticky-header {
+        transition: 600ms ease position;
+        /*background: linear-gradient(90deg, rgba(32, 182, 249, 1) 0%, rgba(32, 182, 249, 1) 0%, rgba(33, 120, 241, 1) 100%, rgba(33, 120, 241, 1) 100%);*/
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+

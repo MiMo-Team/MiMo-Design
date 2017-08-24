@@ -1,0 +1,20 @@
+$gap-top: 30px;
+$gap-bottom: 30px;
+
+/* =========  Pagination  module style modification ( mainly for form background, border, font color changes ) ========= */
+.app-main .win {
+  .el-pagination {
+    margin: $gap-top 0 $gap-bottom;
+    //show size/every page ，input-width
+    .el-select .el-input .el-input__inner {
+      width: 100%;
+    }
+    /*jump input style*/
+    button.disabled, .btn-next, .btn-prev, .el-pagination__editor {
+      color: rgba(72, 87, 106, .98);
+    }
+  }
+}
+
+
+
