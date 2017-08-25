@@ -12,7 +12,7 @@
                 <el-col :xs="24" :sm="24" :md="22" :lg="18">
                     <el-carousel :interval="8000" type="card" height="300px">
                         <el-carousel-item v-for="item in 6" :key="item">
-                            <img :src='imgsrc + item + ".jpg"' alt="xxx" @click="selectSkin(item)">
+                            <img :src='imgsrc + item + ".jpg"' :alt="'skin-cover'+item" @click="selectSkin(item)">
                             <h3>{{item | titshow}}</h3>
                         </el-carousel-item>
                     </el-carousel>
@@ -183,7 +183,7 @@
                 color: #FFF;
                 font-size: 18px;
                 text-align: center;
-                bottom:0;
+                bottom: 0;
             }
             img {
                 width: 100%;
