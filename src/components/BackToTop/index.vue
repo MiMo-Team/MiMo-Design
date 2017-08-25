@@ -65,7 +65,7 @@
                 const start = window.pageYOffset;
                 let i = 0;
                 this.interval = setInterval(() => {
-                    const next = Math.floor(this.easeInOutQuad(10 * i, start, -start, 500));
+                    const next = Math.floor(this.easeInOutQuad(10 * i, start, -start, 300));
                     if (next <= this.backPosition) {
                         window.scrollTo(0, this.backPosition);
                         clearInterval(this.interval)
