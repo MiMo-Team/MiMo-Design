@@ -51,6 +51,7 @@ $color-light-gray:rgba(151,161,190,1);
 $el-table-text:rgba(31,45,61,1);
 
 //======================    mimo 项目修改=     ===============================================================
+.custom-theme-blackhole a{color:$primary};
 .custom-theme-changeself .primary{color:$primary;}.custom-theme-changeself #layout.app-wrapper{.sidebar-wrapper{background-color:$sidebar-back;}.app-main{.win{.el-tabs .el-tabs__item.is-active{color:$primary;}.win-tit{color:$primary;}.searchTit{h5{color:$primary;}}.filter-container{h5.filter-item{color:$primary;}span.filter-item{color:$primary;}.el-form{.el-form-item{.el-form-item__label{color:$primary;}}}}.el-table{span{&.msg-tit{&:hover{color:$primary;}}}}.avatar-uploader{.el-upload{&:hover{border-color:$primary;}}}}}}
 //鼠标移入效果
 .custom-theme-changeself #layout .el-menu--horizontal.el-menu--dark .el-submenu .el-menu-item:hover,.custom-theme-changeself #layout .el-menu--horizontal.el-menu--dark .el-submenu .el-submenu-title:hover,.custom-theme-changeself #layout .el-menu-item:hover:hover{background-color:$sidebar-back-light;}.custom-theme-changeself #layout .el-submenu .el-menu-item:hover,.custom-theme-changeself #layout .el-submenu__title:hover{background-color:$sidebar-back-light;}.custom-theme-changeself #layout .el-menu--horizontal .el-submenu .el-submenu__title:hover{background-color:$sidebar-back-light;}.custom-theme-changeself #layout .header .headNav .el-submenu .el-menu li.el-menu-item:hover{background-color:$sidebar-back-light;}
