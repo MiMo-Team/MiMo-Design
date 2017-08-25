@@ -47,16 +47,16 @@ $panGreen: rgba(48, 176, 143, .98);
 }
 
 .pan-btn {
+  position: relative;
+  display: block;
+  width: 90%;
+  padding: 14px 0;
   font-size: 14px;
   color: #fff;
-  padding: 14px 36px;
   border-radius: 8px;
   border: none;
   outline: none;
-  margin-right: 25px;
   transition: 600ms ease all;
-  position: relative;
-  display: inline-block;
   &:hover {
     background: #fff;
     &:before, &:after {
@@ -96,4 +96,17 @@ $panGreen: rgba(48, 176, 143, .98);
   padding: 10px 15px;
   font-size: 14px;
   border-radius: 4px;
+}
+
+.custom-theme-blackhole{
+  .pan-btn {
+    color: #fff;
+    &:hover {
+      background: #fff;
+    }
+  }
+  .custom-button{
+    background: #fff;
+    color: #fff;
+  }
 }
