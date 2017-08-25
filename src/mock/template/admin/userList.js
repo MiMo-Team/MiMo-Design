@@ -12,7 +12,7 @@ const userListData = {
                 "jobNum": '@guid',                                                                          //工号
                 "status|1": [                                                                               //权限
                     'admin', 'normalUser', 'disapply', 'disable',
-                    'normalUser', 'normalUser', 'normalUser', 'normalUser', 'normalUser', 'normalUser','normalUser','normalUser','normalUser','normalUser',
+                    'normalUser', 'normalUser', 'normalUser', 'normalUser', 'normalUser', 'normalUser', 'normalUser', 'normalUser', 'normalUser', 'normalUser',
                     'disapply', 'disable',
                 ],
                 // "status|1-100": 1,                                                                       //权限编号（概率模拟，通过后续函数处理）
@@ -28,8 +28,20 @@ const userListData = {
                 ],
                 "birthday": '@date("yyyy-MM-dd")',                                                          //出生日期
                 "WeChat": /^[a-zA-Z]{1,3}[a-zA-Z0-9]{5,7}$/,                                                //微信号
-                "role|1": ['总监', '设计师', '设计师助理', '运营经理', '制版师', '行政财务', '客服', '裁缝师', '纺织工', '物料管理', '仓管', '物料裁定', '其他'],//角色
-                "remarks|1": ["新进员工","基层员工","优秀员工","骨干员工","进修员工"], //备注
+                "role|1": [                                                                                 //角色
+                    '总监',
+                    '设计师', '设计师助理', '设计师', '设计师助理', '设计师', '设计师助理',
+                    '运营经理', '运营经理', '运营经理', '运营经理', '运营经理',
+                    '制版师', '制版师', '制版师', '制版师', '制版师',
+                    '行政财务', '行政财务',
+                    '客服', '客服', '客服', '客服', '客服', '客服',
+                    '裁缝师', '纺织工', '裁缝师', '纺织工', '裁缝师', '纺织工', '裁缝师', '纺织工', '裁缝师',
+                    '纺织工', '裁缝师', '纺织工', '裁缝师', '纺织工', '裁缝师', '纺织工', '裁缝师', '纺织工',
+                    '纺织工', '裁缝师', '纺织工', '裁缝师', '纺织工', '裁缝师', '纺织工', '裁缝师', '纺织工',
+                    '物料管理', '仓管', '物料裁定', '物料管理', '仓管', '物料裁定', '物料管理', '仓管', '物料裁定', '物料管理', '仓管', '物料裁定',
+                    '其他'
+                ],
+                "remarks|1": ["新进员工", "基层员工", "优秀员工", "骨干员工", "进修员工"], //备注
                 'random|1-100': 1,                                                                           //1-100随机数
                 "avatar": function (n) {
                     return 'http://otaflb4oo.bkt.clouddn.com/' + 'mimo/p/avatar/cartoon/avatar' + n.context.currentContext.random + '.jpg-thumb_m2.2_s200.200';
