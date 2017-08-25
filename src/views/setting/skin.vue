@@ -7,12 +7,19 @@
             <!--tit-->
             <p class="win-tit"><span>▌</span>&nbsp;切换主题</p>
             <!--cover-->
-            <el-carousel :interval="8000" type="card" height="300px">
-                <el-carousel-item v-for="item in 6" :key="item">
-                    <img :src='imgsrc + item + ".jpg"' alt="xxx" @click="selectSkin(item)">
-                    <h3>{{ item }}</h3>
-                </el-carousel-item>
-            </el-carousel>
+            <el-row :gutter="10">
+                <el-col :xs="0" :sm="0" :md="1" :lg="3" style="height: 10px"></el-col>
+                <el-col :xs="24" :sm="24" :md="22" :lg="18">
+                    <el-carousel :interval="8000" type="card" height="300px">
+                        <el-carousel-item v-for="item in 6" :key="item">
+                            <img :src='imgsrc + item + ".jpg"' alt="xxx" @click="selectSkin(item)">
+                            <h3>{{item | titshow}}</h3>
+                        </el-carousel-item>
+                    </el-carousel>
+                </el-col>
+                <el-col :xs="0" :sm="0" :md="1" :lg="3" style="height: 10px"></el-col>
+            </el-row>
+
             <!--show-->
             <el-card class="box-card">
                 <div class="box-item">
@@ -46,13 +53,14 @@
 <script>
     import {replaceClass} from '../../utils/index';
     export default {
-        name:'choice-theme',
+        name: 'choice-theme',
         data() {
             return {
                 theme: true,
-                imgsrc: 'http://otaflb4oo.bkt.clouddn.com/mimo/theme/cover/cover',
+                imgsrc: 'http://otaflb4oo.bkt.clouddn.com/mimo/theme/skincover/cover',
+                skintit: '标准皮肤',
                 skinname: '标准皮肤',
-                normalsw:true,
+                normalsw: true,
                 tags: [
                     {
                         name: '标签一',
@@ -83,6 +91,19 @@
                 inputValue: ''
             }
         },
+        filters: {
+            titshow(index) {
+                const titshowMap = {
+                    1: '标准皮肤',
+                    2: '黑色奢华',
+                    3: '绿意盎然',
+                    4: '金色时代',
+                    5: '放飞自我',
+                    6: '粉色诱惑',
+                };
+                return titshowMap[index]
+            }
+        },
         watch: {
             theme() {
                 replaceClass(document.body, 'custom-theme-normal');
@@ -93,6 +114,7 @@
         },
         created(){
             this.sw();
+
         },
         methods: {
             sw(){
@@ -139,7 +161,7 @@
 </script>
 <style rel="stylesheet/scss" lang="scss" scoped>
     $card-height: 30px;
-    #choice-theme{
+    #choice-theme {
         .box-card {
             width: 400px;
             margin: 20px auto;
@@ -155,6 +177,14 @@
             }
         }
         .el-carousel__item {
+            h3 {
+                position: absolute;
+                width: 100%;
+                color: #FFF;
+                font-size: 18px;
+                text-align: center;
+                bottom:0;
+            }
             img {
                 width: 100%;
                 height: 100%;
