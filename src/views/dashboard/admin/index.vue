@@ -12,7 +12,7 @@
             </svg>
         </a>
         <!--第一行 ： 顶部快速入口按钮-->
-        <el-row class="btn-group dashboard-admin-container-row" :gutter="10">
+        <el-row class="btn-group dashboard-admin-container-row clr_mb" :gutter="10">
             <el-col :xs="12" :sm="8" :md="6" :lg="4" class='txtC'>
                 <router-link class="pan-btn blue-btn" to="/index">用户列表</router-link>
             </el-col>
@@ -32,7 +32,21 @@
                 <router-link class="pan-btn yellow-btn" to="/index">图库</router-link>
             </el-col>
         </el-row>
-        <!--第二行-->
+        <!--第二行 ： banner-cover -->
+        <el-row class="dashboard-admin-container-row clr_mb" :gutter="10">
+            <el-col :xs="0" :sm="0" :md="0" :lg="2" style="height: 10px"></el-col>
+            <el-col :xs="24" :sm="24" :md="24" :lg="20">
+                <el-carousel :interval="8000" type="card" :height="coverHight">
+                    <el-carousel-item v-for="item in 6" :key="item">
+                        <router-link :to="{path:'/index'}">
+                            <img :src='imgsrc + item + ".jpg"' :alt="'dashboard-cover'+item">
+                        </router-link>
+                    </el-carousel-item>
+                </el-carousel>
+            </el-col>
+            <el-col :xs="0" :sm="0" :md="0" :lg="2" style="height: 10px"></el-col>
+        </el-row>
+        <!--第三行-->
         <el-row :gutter="30" class="dashboard-admin-container-row">
             <!--左侧信息缩略展示-->
             <el-col :xs="24" :sm="12" :md="10" :lg="6">
@@ -75,7 +89,7 @@
                 <bar-chart :bar_chart_data="bar_chart_data" v-if="pie_sw && bar_sw && line_sw"></bar-chart>
             </el-col>
         </el-row>
-        <!--第三行-->
+        <!--第四行-->
         <el-row :gutter="30" class="dashboard-admin-container-row">
             <!--人员架构图示-->
             <el-col :xs="24" :sm="24" :md="10" :lg="10">
@@ -86,6 +100,10 @@
                 <line-chart :line_chart_data="line_chart_data" v-if="pie_sw && bar_sw && line_sw"></line-chart>
             </el-col>
         </el-row>
+        <!--go top-->
+        <el-tooltip placement="top" content="返回顶部">
+            <back-to-top transitionName="fade" :customStyle="myBackToTopStyle" :visibilityHeight="500" :backPosition="0"></back-to-top>
+        </el-tooltip>
     </div>
 </template>
 
@@ -98,6 +116,8 @@
         components: {panThumb, countTo, pieChart, lineChart, barChart, todoList},
         data() {
             return {
+                coverHight: '300px',
+                imgsrc: 'http://otaflb4oo.bkt.clouddn.com/mimo/theme/skincover/cover',
                 statisticsData: {
                     news_count: 10,
                     entrydate_count: 1024,
@@ -131,7 +151,17 @@
                 line_sw: false,
                 pie_chart_data: {},
                 bar_chart_data: {},
-                line_chart_data: {}
+                line_chart_data: {},
+                myBackToTopStyle: {
+                    right: '50px',
+                    bottom: '50px',
+                    width: '40px',
+                    height: '40px',
+                    'border-radius': '4px',
+                    'line-height': '45px', // 请保持与高度一致以垂直居中
+                    background: '#e7eaf1',// 按钮的背景颜色
+                    'z-index': 2002
+                }
             }
         },
         created () {
@@ -194,6 +224,12 @@
             .el-col {
                 padding-top: @dashboard-rol-gap / 2;
                 padding-bottom: @dashboard-rol-gap;
+            }
+            .el-carousel__item {
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
         .btn-group {
