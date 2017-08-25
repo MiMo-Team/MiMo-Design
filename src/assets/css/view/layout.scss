@@ -30,6 +30,7 @@ $win_pr: 30px;
 
 
 $sidebar-back: rgba(50, 65, 87, 1);
+$sidebar-back-hover: rgb(85, 104, 134);
 
 @mixin transition( $property,$duration,$timing-function) {
   -moz-transition: $property $duration $timing-function;
@@ -207,11 +208,11 @@ body {
 /*------------------  下拉菜单的导航模块字体颜色变化  ------------------*/
 #layout .sidebar-wrapper .el-menu-item,.sidebar-wrapper .el-submenu__title,#layout .sidebar-wrapper .el-menu--horizontal .el-submenu .el-submenu__icon-arrow {color:$clr_w98 !important;}
 /*------------------  鼠标移入效果  ------------------*/
-#layout .el-menu--horizontal.el-menu--dark .el-submenu .el-menu-item:hover,#layout .el-menu--horizontal.el-menu--dark .el-submenu .el-submenu-title:hover,#layout .el-menu-item:hover:hover {background-color:$skin78;}
-#layout .el-submenu .el-menu-item:hover,#layout .el-submenu__title:hover {background-color:$skin78;}
-#layout .el-menu--horizontal .el-submenu .el-submenu__title:hover {background-color:$skin78;}
+#layout .el-menu--horizontal.el-menu--dark .el-submenu .el-menu-item:hover,#layout .el-menu--horizontal.el-menu--dark .el-submenu .el-submenu-title:hover,#layout .el-menu-item:hover:hover {background-color:$sidebar-back-hover;}
+#layout .el-submenu .el-menu-item:hover,#layout .el-submenu__title:hover {background-color:$sidebar-back-hover;}
+#layout .el-menu--horizontal .el-submenu .el-submenu__title:hover {background-color:$sidebar-back-hover;}
 //下拉子菜单鼠标移入效果
-#layout .header .headNav .el-submenu .el-menu li.el-menu-item:hover {background-color:$skin78;}
+#layout .header .headNav .el-submenu .el-menu li.el-menu-item:hover {background-color:$sidebar-back-hover;}
 
 
 
