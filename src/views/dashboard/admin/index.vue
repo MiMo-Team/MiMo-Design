@@ -204,26 +204,26 @@
         }
     }
 </script>
-<style rel="stylesheet/less" lang="less" scoped>
+<style rel="stylesheet/scss" lang="scss" scoped>
     /*dashboard 模块 页面四周间隔空隙*/
-    @dashboard-gap: 30px;
+    $dashboard-gap: 30px;
     /*dashboard 模块 页面四周间隔空隙*/
-    @dashboard-rol-gap: 20px;
+    $dashboard-rol-gap: 20px;
     /*card模块head高度*/
-    @dashboard-cd-h: 162px;
+    $dashboard-cd-h: 162px;
     /*row 每行间隔*/
-    @dashboard-row-gap: 30px;
+    $dashboard-row-gap: 30px;
     /*row 中按钮间隔*/
-    @dashboard-btn-gap: 10px;
+    $dashboard-btn-gap: 10px;
     /*card模块bottom中字体间隔*/
-    @dashboard-fs-gap: 10px;
+    $dashboard-fs-gap: 10px;
     .dashboard-admin-container {
-        margin: @dashboard-gap;
+        margin: $dashboard-gap;
         .dashboard-admin-container-row {
-            margin-bottom: @dashboard-rol-gap;
+            margin-bottom: $dashboard-rol-gap;
             .el-col {
-                padding-top: @dashboard-rol-gap / 2;
-                padding-bottom: @dashboard-rol-gap;
+                padding-top: $dashboard-rol-gap / 2;
+                padding-bottom: $dashboard-rol-gap;
             }
             .el-carousel__item {
                 img {
@@ -233,10 +233,10 @@
             }
         }
         .btn-group {
-            margin-bottom: @dashboard-row-gap*2/3;
+            margin-bottom: $dashboard-row-gap*2/3;
             .el-col {
-                padding-top: @dashboard-btn-gap;
-                padding-bottom: @dashboard-btn-gap;
+                padding-top: $dashboard-btn-gap;
+                padding-bottom: $dashboard-btn-gap;
             }
         }
         .box-card-header {
@@ -254,10 +254,10 @@
         }
         .info-item {
             display: inline-block;
-            margin-top: @dashboard-fs-gap;
+            margin-top: $dashboard-fs-gap;
             font-size: 14px;
             &:first-of-type {
-                margin-right: @dashboard-fs-gap;
+                margin-right: $dashboard-fs-gap;
             }
         ;
             .info-item-num {
