@@ -19,13 +19,13 @@ const pieChart_staff = {
             {
                 name: '在职人员架构缩略图',
                 data: [
-                    {value: 50, name: '纺织工、物料裁定、裁缝师、纺织工等'},
-                    {value: 18, name: '客服、售后'},
-                    {value: 14, name: '制版师'},
-                    {value: 12, name: '设计师及设计师助理'},
-                    {value: 10, name: '其他'},
-                    {value: 8, name: '运营经理'},
-                    {value: 8, name: '仓储、运维'},
+                    {value: 36, name: '纺织工、物料裁定、裁缝师、纺织工等'},
+                    {value: 12, name: '客服、售后'},
+                    {value: 7, name: '制版师'},
+                    {value: 8, name: '设计师及设计师助理'},
+                    {value: 6, name: '其他'},
+                    {value: 7, name: '运营经理'},
+                    {value: 12, name: '仓储、运维'},
                     {value: 6, name: '行政财务'},
                     {value: 2, name: '总监'}
                 ]
