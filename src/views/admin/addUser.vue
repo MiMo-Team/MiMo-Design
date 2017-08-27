@@ -1,4 +1,4 @@
-<!-- ============= bench => user edit ============= -->
+<!-- ============= admin -  user edit ============= -->
 <template>
     <div class="win fr" id="addUser">
         <!--Multi-handle fixed -->
