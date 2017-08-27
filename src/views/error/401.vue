@@ -69,7 +69,7 @@
                 this.epilogueShow = !this.epilogueShow;
             },
             back() {
-                console.log('是否返回登录界面：' + this.$route.query.noGoBack);
+//                console.log('是否返回登录界面：' + this.$route.query.noGoBack);
                 if (this.$route.query.noGoBack) {
                     this.$router.push({path: '/front/login'});
                 } else {
