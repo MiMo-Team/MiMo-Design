@@ -36,7 +36,7 @@ const userSidebarNav = {
                     {id: "3-2", "display_name": "面辅料目录", "moduleorder": "2", "path": "/storage/accessoriesList"},
                     {id: "3-3", "display_name": "入库单", "moduleorder": "3", "path": "/storage/depotin"},
                     {id: "3-4", "display_name": "出库单", "moduleorder": "4", "path": "/storage/depotout"},
-                    {id: "3-5", "display_name": "月度结余", "moduleorder": "5", "path": "/storage/add"},
+                    {id: "3-5", "display_name": "月度结余", "moduleorder": "5", "path": "/unfinished"},
                 ]
             },
             {
@@ -44,14 +44,14 @@ const userSidebarNav = {
                 icon: "stealth",
                 modulegroup_order: '4',
                 module: [
-                    {id: "4-1", "display_name": "款式初稿", "moduleorder": "1", "path": "/bench"},
-                    {id: "4-2", "display_name": "初稿审核", "moduleorder": "2", "path": "/front/login",},
-                    {id: "4-3", "display_name": "配面辅料", "moduleorder": "3", "path": "/front/login",},
-                    {id: "4-4", "display_name": "面辅料评审", "moduleorder": "4", "path": "/front/login",},
-                    {id: "4-5", "display_name": "款式制版", "moduleorder": "5", "path": "/front/login",},
-                    {id: "4-6", "display_name": "裁剪面料", "moduleorder": "6", "path": "/front/login",},
-                    {id: "4-7", "display_name": "缝制样衣", "moduleorder": "7", "path": "/front/login",},
-                    {id: "4-8", "display_name": "版型评审", "moduleorder": "8", "path": "/front/login",}
+                    {id: "4-1", "display_name": "款式初稿", "moduleorder": "1", "path": "/unfinished"},
+                    {id: "4-2", "display_name": "初稿审核", "moduleorder": "2", "path": "/unfinished",},
+                    {id: "4-3", "display_name": "配面辅料", "moduleorder": "3", "path": "/unfinished",},
+                    {id: "4-4", "display_name": "面辅料评审", "moduleorder": "4", "path": "/unfinished",},
+                    {id: "4-5", "display_name": "款式制版", "moduleorder": "5", "path": "/unfinished",},
+                    {id: "4-6", "display_name": "裁剪面料", "moduleorder": "6", "path": "/unfinished",},
+                    {id: "4-7", "display_name": "缝制样衣", "moduleorder": "7", "path": "/unfinished",},
+                    {id: "4-8", "display_name": "版型评审", "moduleorder": "8", "path": "/unfinished",}
                 ]
             },
 
@@ -64,23 +64,23 @@ const userSidebarNav = {
                         id: "5-1",
                         "display_name": "流程管理",
                         "moduleorder": "1",
-                        "path": "/front/login",
+                        "path": "/unfinished",
                     }
                 ]
             },
             {
                 modulegroup: "设置",
                 icon: "setup",
-                modulegroup_order: '7',
+                modulegroup_order: '6',
                 module: [
                     {
-                        id: "7-1",
+                        id: "6-1",
                         "display_name": "修改密码",
                         "moduleorder": "1",
                         "path": "/setting/modifypass",
                     },
                     {
-                        id: "7-2",
+                        id: "6-2",
                         "display_name": "切换皮肤",
                         "moduleorder": "2",
                         "path": "/setting/skin",
