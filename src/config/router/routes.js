@@ -23,6 +23,7 @@ import vuefor2 from '../../components/test/vuefor2.vue'
 /* error page */
 import Err404 from '../../views/error/404.vue'
 import Err401 from '../../views/error/401.vue'
+import unfinished from '../../views/error/unfinished.vue'
 
 import App from '../../App.vue'
 // ===========================  Front 登录注册  ============================
@@ -151,6 +152,7 @@ export default[
         children: [
             {path: 'index', component: Layout, redirect: '/dashboard', meta: {requireAuth: true}},
             {path: 'dashboard', component: dashboard, meta: {requireAuth: true}},
+            {path: 'unfinished', component: unfinished, meta: {requireAuth: true}},
         ]
     },
     // 用户
