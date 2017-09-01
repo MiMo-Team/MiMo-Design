@@ -116,8 +116,8 @@
         components: {panThumb, countTo, pieChart, lineChart, barChart, todoList},
         data() {
             return {
-                coverHight: '300px',
-                imgsrc: 'http://otaflb4oo.bkt.clouddn.com/mimo/theme/skincover/cover',
+                coverHight: '200px',
+                imgsrc: 'http://otaflb4oo.bkt.clouddn.com/mimo/banner/banner',
                 statisticsData: {
                     news_count: 10,
                     entrydate_count: 1024,
