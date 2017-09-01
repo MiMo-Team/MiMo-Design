@@ -18,7 +18,6 @@ const adminSidebarNav = {
                     {id: "1-2", "display_name": "用户列表", "moduleorder": "2", "path": "/adm/admin"},
                     {id: "1-3", "display_name": "添加新用户", "moduleorder": "3", "path": "/adm/add"},
                     {id: "1-3", "display_name": "通告管理", "moduleorder": "4", "path": "/adm/adminac"},
-                    {id: "1-4", "display_name": "未完工", "moduleorder": "5", "path": "/unfinished"},
                 ]
             },
             {
