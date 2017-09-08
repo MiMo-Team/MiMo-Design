@@ -18,16 +18,6 @@
                 >&nbsp;&nbsp;{{secondlist.display_name }}
                 </el-menu-item>
             </el-submenu>
-            <!--测试菜单-->
-            <el-submenu index="6">
-                <template slot="title">
-                    <icon-svg icon-class="warning" style="font-size: 20px"></icon-svg>&nbsp;&nbsp;测试入口
-                </template>
-                <el-menu-item index="6-1" :route="{path: '/bench'}">回到主页</el-menu-item>
-                <el-menu-item index="6-2" :route="{path: './front/login'}">回到登录界面</el-menu-item>
-                <el-menu-item index="6-3" :route="{path: './bench/user'}">测试入口</el-menu-item>
-                <el-menu-item index="6-4" :route="{path: './bench/admin'}">测试入口2</el-menu-item>
-            </el-submenu>
         </el-menu>
     </div>
 </template>
