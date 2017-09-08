@@ -129,6 +129,38 @@ const adminSidebarNav = {
                     }
                 ]
             },
+
+            {
+                modulegroup: "测试入口",
+                icon: "picture",
+                modulegroup_order: '9',
+                module: [
+                    {
+                        id: "9-1",
+                        "display_name": "测试组件1",
+                        "moduleorder": "1",
+                        "path": "/test/componentsTest1"
+                    },
+                    {
+                        id: "9-2",
+                        "display_name": "测试组件2",
+                        "moduleorder": "2",
+                        "path": "/test/componentsTest2"
+                    },
+                    {
+                        id: "9-3",
+                        "display_name": "测试父组件内换位",
+                        "moduleorder": "3",
+                        "path": "/test/sorTable"
+                    },
+                    {
+                        id: "9-4",
+                        "display_name": "测试入口2",
+                        "moduleorder": "4",
+                        "path": "./bench/user"
+                    }
+                ]
+            }
         ]
     }
 };
