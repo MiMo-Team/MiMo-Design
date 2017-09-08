@@ -12,6 +12,10 @@ import tabView from './modules/tabView';
 
 import getters from './getters';
 
+//测试
+import test from './modules/test';
+
+
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
@@ -21,6 +25,8 @@ const store = new Vuex.Store({
         mock,
         toggleSideBar,
         tabView,
+
+        test
     },
     getters
 });
