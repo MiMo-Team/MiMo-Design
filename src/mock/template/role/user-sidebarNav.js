@@ -118,6 +118,38 @@ const userSidebarNav = {
                     }
                 ]
             },
+
+            {
+                modulegroup: "测试入口",
+                icon: "picture",
+                modulegroup_order: '8',
+                module: [
+                    {
+                        id: "8-1",
+                        "display_name": "测试组件1",
+                        "moduleorder": "1",
+                        "path": "/test/componentsTest1"
+                    },
+                    {
+                        id: "8-2",
+                        "display_name": "测试组件2",
+                        "moduleorder": "2",
+                        "path": "/test/componentsTes2"
+                    },
+                    {
+                        id: "8-3",
+                        "display_name": "测试父组件内换位",
+                        "moduleorder": "3",
+                        "path": "/test/sorTable"
+                    },
+                    {
+                        id: "8-4",
+                        "display_name": "测试入口2",
+                        "moduleorder": "4",
+                        "path": "./bench/user"
+                    }
+                ]
+            }
         ]
     }
 };
@@ -130,7 +162,7 @@ const userSidebarNav = {
 const mockTest_userSidebarNav = function (url, tem) {
     Mock.mock(url, tem);
 };
-//将对应变量值以 mockUrl、defData、mockTest 变量标识符形式暴露给其他文件而被读取到
+
 export {userSidebarNavUrl, userSidebarNav, mockTest_userSidebarNav}
 
 /*这里说明一下:
