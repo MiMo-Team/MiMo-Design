@@ -2,7 +2,10 @@
  * router for vue-view
  */
 // ----------------------------------  ** 模板页面引入 ** ----------------------------------
-
+//组件动态添加测试1 测试页面
+import componentsTest1 from '../../views/test/componentTest1.vue'
+import componentsTest2 from '../../views/test/componentTest2.vue'
+import SorTable from '../../views/test/SorTable.vue'
 //测试 api 页面
 import test from '../../components/test/test.vue'
 
@@ -237,6 +240,22 @@ export default[
             {path: 'skin', component: skin, meta: {requireAuth: true}, name: '切换皮肤'},
         ]
     },
+
+    // 测试
+    {
+        path: '/test',
+        component: Layout,
+        redirect: null,
+        name: "测试",
+        children: [
+            {path: 'componentsTest1', component: componentsTest1, meta: {requireAuth: true}, name: '测试组件1'},
+            {path: 'componentsTest2', component: componentsTest2, meta: {requireAuth: true}, name: '测试组件2'},
+            {path: 'sorTable', component: SorTable, meta: {requireAuth: true}, name: '测试父组件内换位'},
+
+
+        ]
+    },
+
     // 初始状态路由匹配
     {path: '/', redirect: iniView},
     {path: '*', redirect: error},
