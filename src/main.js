@@ -34,7 +34,7 @@ Object.keys(filters).forEach(key => {
 
 
 //loading Mock
-import mock from '../bower_components/mockjs/dist/mock.js'
+import mock from '../bower_components/mockjs/bin/mock-min'
 
 // register globally
 import IconSvg from './components/Icon-svg/index.vue'// svg 组件
